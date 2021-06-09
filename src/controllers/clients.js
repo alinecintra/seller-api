@@ -34,7 +34,7 @@ module.exports = (app) => {
             if (error.code === 'ER_DUP_ENTRY') {
                 return res.status(400).send({ message: 'Usuário já cadastrado' })
             }
-            return res.status(500).send({ message: 'Ocorreu um erro interno' });
+            return res.status(500).send({ message: 'Não foi possível cadastrar cliente' });
         }
     })
 
@@ -60,7 +60,7 @@ module.exports = (app) => {
             return res.send({ message: 'Usuário excluído com sucesso' });
         }
         catch(error) {
-            return res.status(500).send({ message: 'Ocorreu um erro interno' })
+            return res.status(500).send({ message: 'Não foi possível excluir cliente' })
         }
     })
 }
